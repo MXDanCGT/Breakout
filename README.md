@@ -49,3 +49,16 @@ _TO DO_
 ---
 
 Curse you, fast ball!
+
+
+---
+
+
+### Changes 
+
+SESSION 1  -
+26/10/26 - 14:25 -
+
+- Updated the lives counter in UI - now we display text giving the number of balls left (and a little ball icon)
+This allows us to later add powerup and other features that would take the live counter above 3 with UI that can easily describe this.
+ 

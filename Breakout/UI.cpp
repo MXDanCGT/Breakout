@@ -4,23 +4,42 @@
 #include "GameManager.h"
 #include <iomanip>
 
+#include <iostream>
+
 UI::UI(sf::RenderWindow* window, int lives, GameManager* gameManager) 
 	: _window(window), _gameManager(gameManager)
 {
-	for (int i = lives; i > 0; --i)
+
+
+
+
+	const float lifeIconX = LIFE_RADIUS * 2 + LIFE_PADDING;
+	const float lifeIconY = LIFE_PADDING;
+
+	//Initialising the lives icon
+	_livesIcon.setFillColor(sf::Color::Cyan);
+	_livesIcon.setRadius(LIFE_RADIUS);
+	_livesIcon.setPosition(lifeIconX, lifeIconY);
+
+
+
+	if (!_font.loadFromFile("font/montS.ttf"))
 	{
-		sf::CircleShape newLife;
-		newLife.setFillColor(sf::Color::Red);	
-		newLife.setOutlineColor(sf::Color::Cyan);
-		newLife.setOutlineThickness(4.0f);
-		newLife.setRadius(LIFE_RADIUS);
-		newLife.setPosition((LIFE_RADIUS*2 + LIFE_PADDING) * i, LIFE_PADDING);
-		_lives.push_back(newLife);
+		//Error here! TODO look up SFMLs print line function
+		std::cout << "Error! font file not loaded correctly (UI)\n";
+		return;
 	}
+
+	//Initialising the lives text
+	_livesText.setCharacterSize(30);
+	_livesText.setPosition(lifeIconX + LIFE_RADIUS + 2 * LIFE_PADDING, lifeIconY);
+	_livesText.setFont(_font);
+	_livesText.setFillColor(sf::Color::White); 
+	updateLivesText(lives);
+
 	_powerupText.setCharacterSize(30);
 	_powerupText.setPosition(800, 10);
 	_powerupText.setFillColor(sf::Color::Cyan);
-	_font.loadFromFile("font/montS.ttf");
 	_powerupText.setFont(_font);
 }
 
@@ -67,16 +86,21 @@ void UI::updatePowerupText(std::pair<POWERUPS, float> powerup)
 	}
 }
 
+void UI::updateLivesText(int lives)
+{
+	_livesText.setString("x" + std::to_string(lives));
+	
+}
+
 void UI::lifeLost(int lives)
 {
-	_lives[_lives.size() - 1 - lives].setFillColor(sf::Color::Transparent);
+	updateLivesText(lives);
 }
+
 
 void UI::render()
 {
+	_window->draw(_livesText);
 	_window->draw(_powerupText);
-	for (sf::CircleShape life : _lives)
-	{
-		_window->draw(life);
-	}
+	_window->draw(_livesIcon);
 }
