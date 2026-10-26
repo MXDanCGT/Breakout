@@ -14,7 +14,6 @@ public:
 	~UI();
 
 	void updatePowerupText(std::pair<POWERUPS, float>);
-	void lifeLost(int lives);
 	void render();
 
 	/*Function for updating the lives text, on life lost or gained...*/
@@ -30,6 +29,9 @@ private:
 
 	/*The text informing the player of how many lives they have left*/
 	sf::Text _livesText;
+
+	/*Text that sits at the bottom displaying controls and info*/
+	sf::Text _controlsText;
 
 	/*A little ball icon that goes next to our lives text*/
 	sf::CircleShape _livesIcon;

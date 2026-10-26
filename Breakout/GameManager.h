@@ -3,6 +3,7 @@
 #include "CONSTANTS.h"
 #include "Paddle.h"
 #include "Ball.h"
+#include "GamblingSystem.h"
 #include "BrickManager.h"
 #include "PowerupManager.h"
 #include "MessagingSystem.h"
@@ -15,6 +16,7 @@ public:
     GameManager(sf::RenderWindow* window);
     void initialize();
     void update(float dt);
+    void addLives(int lives);
     void loseLife();
     void render();
     void levelComplete();
@@ -45,6 +47,7 @@ private:
     BrickManager* _brickManager;
     PowerupManager* _powerupManager;
     MessagingSystem* _messagingSystem;
+    GamblingSystem* _gamblingSystem;
     UI* _ui;
 
     static constexpr float PAUSE_TIME_BUFFER = 0.5f;

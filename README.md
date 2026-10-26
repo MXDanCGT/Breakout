@@ -56,9 +56,11 @@ Curse you, fast ball!
 
 ### Changes 
 
-SESSION 1  -
-26/10/26 - 14:25 -
+SESSION 1  - 2 HOURS
+26/10/26 - 14:25 -16:25
 
 - Updated the lives counter in UI - now we display text giving the number of balls left (and a little ball icon)
 This allows us to later add powerup and other features that would take the live counter above 3 with UI that can easily describe this.
+
+- Designed and begun implementation of a gambling system, allowing the player to press a key to bet a ball, and have a random (weighted) effect rolled and applied to the game state.
  

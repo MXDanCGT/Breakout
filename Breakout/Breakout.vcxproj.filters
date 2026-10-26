@@ -16,6 +16,9 @@
     <Filter Include="Powerups">
       <UniqueIdentifier>{f3758f5c-ad80-41b1-a2fb-fb910363ec2a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GamblingOutcomes">
+      <UniqueIdentifier>{6b313f2e-a5a5-4c34-88e8-5d60ac619c78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -63,6 +66,15 @@
     <ClCompile Include="PowerupFireBall.cpp">
       <Filter>Powerups</Filter>
     </ClCompile>
+    <ClCompile Include="GamblingSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GamblingOutcomeBase.cpp">
+      <Filter>GamblingOutcomes</Filter>
+    </ClCompile>
+    <ClCompile Include="GamblingOutcomeAddBall.cpp">
+      <Filter>GamblingOutcomes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -109,6 +121,15 @@
     </ClInclude>
     <ClInclude Include="PowerupFireBall.h">
       <Filter>Powerups</Filter>
+    </ClInclude>
+    <ClInclude Include="GamblingSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GamblingOutcomeBase.h">
+      <Filter>GamblingOutcomes</Filter>
+    </ClInclude>
+    <ClInclude Include="GamblingOutcomeAddBall.h">
+      <Filter>GamblingOutcomes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

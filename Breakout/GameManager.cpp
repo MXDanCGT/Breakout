@@ -23,6 +23,7 @@ void GameManager::initialize()
     _ball = new Ball(_window, 400.0f, this); 
     _powerupManager = new PowerupManager(_window, _paddle, _ball);
     _ui = new UI(_window, _lives, this);
+    _gamblingSystem = new GamblingSystem(_window, _paddle, _ball, this);
 
     // Create bricks
     _brickManager->createBricks(5, 10, 80.0f, 30.0f, 5.0f);
@@ -67,6 +68,12 @@ void GameManager::update(float dt)
         return;
     }
 
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
+    {
+      
+    }
+
     // timer.
     _time += dt;
 
@@ -87,10 +94,15 @@ void GameManager::update(float dt)
     _powerupManager->update(dt);
 }
 
+void GameManager::addLives(int lives)
+{
+    _lives += lives;
+    _ui->updateLivesText(_lives);
+}
 void GameManager::loseLife()
 {
     _lives--;
-    _ui->lifeLost(_lives);
+    _ui->updateLivesText(_lives);
 
     // TODO screen shake.
 }

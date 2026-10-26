@@ -41,6 +41,13 @@ UI::UI(sf::RenderWindow* window, int lives, GameManager* gameManager)
 	_powerupText.setPosition(800, 10);
 	_powerupText.setFillColor(sf::Color::Cyan);
 	_powerupText.setFont(_font);
+
+
+	_controlsText.setPosition(lifeIconX, 775);
+	_controlsText.setFont(_font);
+	_controlsText.setCharacterSize(20);
+	_controlsText.setString("AD to move the paddle | P to pause | G to gamble");
+
 }
 
 UI::~UI()
@@ -92,15 +99,10 @@ void UI::updateLivesText(int lives)
 	
 }
 
-void UI::lifeLost(int lives)
-{
-	updateLivesText(lives);
-}
-
-
 void UI::render()
 {
 	_window->draw(_livesText);
 	_window->draw(_powerupText);
 	_window->draw(_livesIcon);
+	_window->draw(_controlsText);
 }
