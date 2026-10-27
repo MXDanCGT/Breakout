@@ -8,7 +8,6 @@
 #include "PowerupBigPaddle.h"
 #include "PowerupSmallPaddle.h"
 #include "PowerupSlowBall.h"
-#include "PowerupFastBall.h"
 #include "PowerupFireBall.h"
 #include "Paddle.h"
 #include "Ball.h"

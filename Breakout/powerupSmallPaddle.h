@@ -8,5 +8,5 @@ public:
     PowerupSmallPaddle(sf::RenderWindow* window, Paddle* paddle, Ball* ball, float x_pos);
     ~PowerupSmallPaddle();
 
-    std::pair<POWERUPS, float> applyEffect() override; // Method to apply the power-up effect
+    //std::pair<POWERUPS, float> applyEffect() override; // Method to apply the power-up effect
 };

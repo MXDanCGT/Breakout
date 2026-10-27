@@ -141,8 +141,11 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickManager.cpp" />
-    <ClCompile Include="EffectableComponent.cpp" />
     <ClCompile Include="EffectableSystem.cpp" />
+    <ClCompile Include="EffectBall.cpp" />
+    <ClCompile Include="EffectBallFastBall.cpp" />
+    <ClCompile Include="EffectBase.cpp" />
+    <ClCompile Include="EffectPaddle.cpp" />
     <ClCompile Include="GamblingOutcomeAddBall.cpp" />
     <ClCompile Include="GamblingOutcomeBase.cpp" />
     <ClCompile Include="GamblingSystem.cpp" />
@@ -154,7 +157,6 @@
     <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="PowerupBase.cpp" />
     <ClCompile Include="PowerupBigPaddle.cpp" />
-    <ClCompile Include="PowerupFastBall.cpp" />
     <ClCompile Include="PowerupFireBall.cpp" />
     <ClCompile Include="PowerupManager.cpp" />
     <ClCompile Include="PowerupSlowBall.cpp" />
@@ -166,8 +168,11 @@
     <ClInclude Include="Brick.h" />
     <ClInclude Include="BrickManager.h" />
     <ClInclude Include="CONSTANTS.h" />
-    <ClInclude Include="EffectableComponent.h" />
     <ClInclude Include="EffectableSystem.h" />
+    <ClInclude Include="EffectBall.h" />
+    <ClInclude Include="EffectBallFastBall.h" />
+    <ClInclude Include="EffectBase.h" />
+    <ClInclude Include="EffectPaddle.h" />
     <ClInclude Include="GamblingOutcomeAddBall.h" />
     <ClInclude Include="GamblingOutcomeBase.h" />
     <ClInclude Include="GamblingSystem.h" />
@@ -176,7 +181,6 @@
     <ClInclude Include="Paddle.h" />
     <ClInclude Include="PowerupBase.h" />
     <ClInclude Include="PowerupBigPaddle.h" />
-    <ClInclude Include="PowerupFastBall.h" />
     <ClInclude Include="PowerupFireBall.h" />
     <ClInclude Include="PowerupManager.h" />
     <ClInclude Include="PowerupSlowBall.h" />

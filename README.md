@@ -66,9 +66,11 @@ This allows us to later add powerup and other features that would take the live 
 
 
 SESSION 2 - 
-27/10/26 - 17:55 -
+27/10/26 - 17:55 - 19:55 (then a break) 21:30-22:30 
 
 - Implemented an early working gambling system - the player can press "G" at any point, have a life deducted, and have 1 of 2 weighted random effects rolled. Text on screen will report what happened, or if you cannot gamble.
 
 - Minor changes to lives logic - now gameplay continues at "0", and instead will go to "-" when that life is lost, and the game is then over.
+
+- Designed and began implementation of an overhaul to the powerups that will allow for multiple to be active at once - now, powerups (or the gambler) will add a string "tag" to a queue, and a manager will decode that into the effect that needs to be applied as a result.
  

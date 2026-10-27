@@ -19,6 +19,9 @@
     <Filter Include="GamblingOutcomes">
       <UniqueIdentifier>{6b313f2e-a5a5-4c34-88e8-5d60ac619c78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Effects">
+      <UniqueIdentifier>{772b4c72-8ab4-4bfe-947e-a0d207559578}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -60,9 +63,6 @@
     <ClCompile Include="PowerupSmallPaddle.cpp">
       <Filter>Powerups</Filter>
     </ClCompile>
-    <ClCompile Include="PowerupFastBall.cpp">
-      <Filter>Powerups</Filter>
-    </ClCompile>
     <ClCompile Include="PowerupFireBall.cpp">
       <Filter>Powerups</Filter>
     </ClCompile>
@@ -75,11 +75,20 @@
     <ClCompile Include="GamblingOutcomeAddBall.cpp">
       <Filter>GamblingOutcomes</Filter>
     </ClCompile>
-    <ClCompile Include="EffectableComponent.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="EffectBase.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectPaddle.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectBall.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectBallFastBall.cpp">
+      <Filter>Effects</Filter>
     </ClCompile>
     <ClCompile Include="EffectableSystem.cpp">
-      <Filter>Header Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +131,6 @@
     <ClInclude Include="PowerupSmallPaddle.h">
       <Filter>Powerups</Filter>
     </ClInclude>
-    <ClInclude Include="PowerupFastBall.h">
-      <Filter>Powerups</Filter>
-    </ClInclude>
     <ClInclude Include="PowerupFireBall.h">
       <Filter>Powerups</Filter>
     </ClInclude>
@@ -137,11 +143,20 @@
     <ClInclude Include="GamblingOutcomeAddBall.h">
       <Filter>GamblingOutcomes</Filter>
     </ClInclude>
-    <ClInclude Include="EffectableComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="EffectableSystem.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectBase.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectPaddle.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectBall.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectBallFastBall.h">
+      <Filter>Effects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

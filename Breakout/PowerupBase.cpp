@@ -2,14 +2,12 @@
 #include <cmath>
 #include <iostream>
 
-PowerupBase::PowerupBase(sf::RenderWindow* window, Paddle* paddle, Ball* ball, float spawnX)
-    : _time(0.0f) // Initialize the time variable
+PowerupBase::PowerupBase(sf::RenderWindow* window, Paddle* paddle, float spawnX)
+    : _time(0.0f), _paddle(paddle) // Initialize the time variable
 {
     _window = window;
-    _paddle = paddle;
     _sprite.setRadius(RADIUS);
     _isAlive = true;
-    _ball = ball;
 
     // Initial position and direction with some variability
     float initialX = spawnX;
@@ -48,7 +46,13 @@ void PowerupBase::update(float dt)
     }
 
 }
+void PowerupBase::applyEffect()
+{
+    if (!_effectableSystem)
+        return;
 
+    _effectableSystem->addEffectToQueue(_powerupEffect);
+}
 void PowerupBase::render()
 {
     _window->draw(_sprite);

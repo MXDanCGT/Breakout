@@ -8,5 +8,5 @@ public:
     PowerupSlowBall(sf::RenderWindow* window, Paddle* paddle, Ball* ball, float x_pos);
     ~PowerupSlowBall();
 
-    std::pair<POWERUPS, float> applyEffect() override; // Method to apply the power-up effect
+    //std::pair<POWERUPS, float> applyEffect() override; // Method to apply the power-up effect
 };
