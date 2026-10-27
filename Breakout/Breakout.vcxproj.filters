@@ -75,6 +75,12 @@
     <ClCompile Include="GamblingOutcomeAddBall.cpp">
       <Filter>GamblingOutcomes</Filter>
     </ClCompile>
+    <ClCompile Include="EffectableComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectableSystem.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -130,6 +136,12 @@
     </ClInclude>
     <ClInclude Include="GamblingOutcomeAddBall.h">
       <Filter>GamblingOutcomes</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectableComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectableSystem.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

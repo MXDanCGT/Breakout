@@ -141,6 +141,8 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickManager.cpp" />
+    <ClCompile Include="EffectableComponent.cpp" />
+    <ClCompile Include="EffectableSystem.cpp" />
     <ClCompile Include="GamblingOutcomeAddBall.cpp" />
     <ClCompile Include="GamblingOutcomeBase.cpp" />
     <ClCompile Include="GamblingSystem.cpp" />
@@ -164,6 +166,8 @@
     <ClInclude Include="Brick.h" />
     <ClInclude Include="BrickManager.h" />
     <ClInclude Include="CONSTANTS.h" />
+    <ClInclude Include="EffectableComponent.h" />
+    <ClInclude Include="EffectableSystem.h" />
     <ClInclude Include="GamblingOutcomeAddBall.h" />
     <ClInclude Include="GamblingOutcomeBase.h" />
     <ClInclude Include="GamblingSystem.h" />

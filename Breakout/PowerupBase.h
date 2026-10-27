@@ -38,5 +38,4 @@ protected: // Protected so derived classes can access these members
     sf::CircleShape _sprite;
     sf::Color _colour;
     sf::RenderWindow* _window;
-
 };

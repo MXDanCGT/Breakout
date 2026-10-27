@@ -7,6 +7,7 @@
 #include "BrickManager.h"
 #include "PowerupManager.h"
 #include "MessagingSystem.h"
+#include "EffectableSystem.h"
 #include "UI.h"
 
 
@@ -28,7 +29,7 @@ public:
 
     Paddle* getPaddle() const;
     BrickManager* getBrickManager() const;
-    PowerupManager* getPowerupManager() const;
+    EffectableSystem* getEffectableSystem() const;
     sf::RenderWindow* getWindow() const;
     UI* getUI() const;
 
@@ -40,7 +41,6 @@ private:
     float _timeLastPowerupSpawned;
     int _lives;
     bool _levelComplete;
-    std::pair<POWERUPS, float> _powerupInEffect;
 
     sf::Font _font;
     sf::Text _masterText;
@@ -49,7 +49,7 @@ private:
     Paddle* _paddle;
     Ball* _ball;
     BrickManager* _brickManager;
-    PowerupManager* _powerupManager;
+    EffectableSystem* _effectableSystem;
     MessagingSystem* _messagingSystem;
     GamblingSystem* _gamblingSystem;
     UI* _ui;
