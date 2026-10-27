@@ -48,6 +48,12 @@ UI::UI(sf::RenderWindow* window, int lives, GameManager* gameManager)
 	_controlsText.setCharacterSize(20);
 	_controlsText.setString("AD to move the paddle | P to pause | G to gamble");
 
+
+	_gamblingText.setPosition(250, 700);
+	_gamblingText.setFillColor(sf::Color::Magenta);
+	_gamblingText.setCharacterSize(30);
+	_gamblingText.setString(""); //Blank by default
+	_gamblingText.setFont(_font);
 }
 
 UI::~UI()
@@ -93,9 +99,22 @@ void UI::updatePowerupText(std::pair<POWERUPS, float> powerup)
 	}
 }
 
+void UI::updateGamblingText(std::string outcomeText)
+{
+	_gamblingText.setString(outcomeText);
+}
+
+
 void UI::updateLivesText(int lives)
 {
-	_livesText.setString("x" + std::to_string(lives));
+	std::string LivesCount;
+
+	if (lives >= 0)
+		LivesCount = std::to_string(lives);
+	else
+		LivesCount = "-";
+
+	_livesText.setString("x" + LivesCount);
 	
 }
 
@@ -105,4 +124,5 @@ void UI::render()
 	_window->draw(_powerupText);
 	_window->draw(_livesIcon);
 	_window->draw(_controlsText);
+	_window->draw(_gamblingText);
 }

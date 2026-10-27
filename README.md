@@ -63,4 +63,12 @@ SESSION 1  - 2 HOURS
 This allows us to later add powerup and other features that would take the live counter above 3 with UI that can easily describe this.
 
 - Designed and begun implementation of a gambling system, allowing the player to press a key to bet a ball, and have a random (weighted) effect rolled and applied to the game state.
+
+
+SESSION 2 - 
+27/10/26 - 17:55 -
+
+- Implemented an early working gambling system - the player can press "G" at any point, have a life deducted, and have 1 of 2 weighted random effects rolled. Text on screen will report what happened, or if you cannot gamble.
+
+- Minor changes to lives logic - now gameplay continues at "0", and instead will go to "-" when that life is lost, and the game is then over.
  

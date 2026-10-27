@@ -1,3 +1,4 @@
+#include <iostream>
 #include "GamblingSystem.h"
 #include "GameManager.h"
 #include "GamblingOutcomeBase.h"
@@ -12,18 +13,23 @@ GamblingSystem::GamblingSystem(sf::RenderWindow* window, Paddle* paddle, Ball* b
 	//FOR NOW this is where we will fill our gambling outcomes
 
 	_gamblingOutcomes.push_back(
-	std::make_unique<GamblingOutcomeBase>(new GamblingOutcomeBase(3, this))
+	std::make_unique<GamblingOutcomeBase>(3, this)
 	);
-
 
 	_gamblingOutcomes.push_back(
-		std::make_unique<GamblingOutcomeAddBall>(new GamblingOutcomeAddBall(1, this))
+		std::make_unique<GamblingOutcomeAddBall>(1, this)
 	);
+
+	_bActive = false;
+
+	_gamblingCooldown = 0.f;
+
+
+	initialise(); //TODO this just here?
 }
 
-
 //Setting up random device
-void GamblingSystem::Initialise()
+void GamblingSystem::initialise()
 {
 	//Calculate the maximum of the random number generator, accounting for the weights of our gambling outcomes
 	
@@ -42,7 +48,63 @@ void GamblingSystem::Initialise()
 	_distribution = std::uniform_int_distribution<>(_randMin, _randMax);
 }
 
-void GamblingSystem::RollGamblingOutcome()
+void GamblingSystem::update(float dt)
 {
+	//If we arent actively gambling, we want to ignore all this stuff
+	if (!_bActive)
+		return;
+
+	//... or if we are not on time out, don't reduce the timer
+	if (_gamblingCooldown <= 0)
+	{
+		_gameManager->updateGamblingUI(""); //Clear the gambling text here...
+		_bActive = false;
+		return;
+	}
+
+	//we will decrease the "time since gambled timer" here
+	_gamblingCooldown -= dt;
+
+
+}
+
+
+void GamblingSystem::rollGamblingOutcome()
+{
+	//Presing the button won't do anything if we are on timeout
+	if (_gamblingCooldown > 0)
+		return;
+
+	if (!_gameManager)
+		return;
+
+	_gamblingCooldown = 3.f;
+
+	if (_gameManager->getLives() <= 0)
+	{
+		_gameManager->updateGamblingUI("NEED BALLS");
+		return;
+	}
+
+	_gameManager->loseLife();
+	std::cout << "Gambling!\n";
+	_bActive = true;
+
+
+	//Now the random roll itself
+	int randomOut = _distribution(_randomGenerator);
+
+	for (int i = 0; i < _gamblingOutcomes.size(); ++i)
+	{
+		const int W = _gamblingOutcomes[i].get()->GetWeight();
+		if (randomOut <= W)
+		{
+			_gameManager->updateGamblingUI(_gamblingOutcomes[i].get()->activateOutcome());
+			return;
+		}
+		randomOut -= W;
+	}
+
+	std::cout << "Uh the gambling system is not working guys\n";
 
 }

@@ -5,7 +5,7 @@
 
 GameManager::GameManager(sf::RenderWindow* window)
     : _window(window), _paddle(nullptr), _ball(nullptr), _brickManager(nullptr), _powerupManager(nullptr),
-    _messagingSystem(nullptr), _ui(nullptr), _pause(false), _time(0.f), _lives(3), _pauseHold(0.f), _levelComplete(false),
+    _messagingSystem(nullptr), _ui(nullptr), _pause(false), _time(0.f), _lives(3), _pauseHold(0.f), _levelComplete(false), _gamblingSystem(nullptr),
     _powerupInEffect({ none,0.f }), _timeLastPowerupSpawned(0.f)
 {
     _font.loadFromFile("font/montS.ttf");
@@ -31,12 +31,14 @@ void GameManager::initialize()
 
 void GameManager::update(float dt)
 {
+    _gamblingSystem->update(dt);
+
     _powerupInEffect = _powerupManager->getPowerupInEffect();
     _ui->updatePowerupText(_powerupInEffect);
     _powerupInEffect.second -= dt;
     
 
-    if (_lives <= 0)
+    if (_lives < 0)
     {
         _masterText.setString("Game over.");
         return;
@@ -71,7 +73,7 @@ void GameManager::update(float dt)
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::G))
     {
-      
+        _gamblingSystem->rollGamblingOutcome();
     }
 
     // timer.
@@ -94,6 +96,11 @@ void GameManager::update(float dt)
     _powerupManager->update(dt);
 }
 
+void GameManager::updateGamblingUI(std::string str)
+{
+    if (_ui)
+        _ui->updateGamblingText(str);
+}
 void GameManager::addLives(int lives)
 {
     _lives += lives;

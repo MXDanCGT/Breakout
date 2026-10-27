@@ -14,10 +14,15 @@ public:
 	~UI();
 
 	void updatePowerupText(std::pair<POWERUPS, float>);
-	void render();
 
 	/*Function for updating the lives text, on life lost or gained...*/
 	void updateLivesText(int lives);
+
+	/*Function just to write to the gambling text variable - as with powerups, timing handled elsewhere*/
+	void updateGamblingText(std::string outcomeText);
+
+
+	void render();
 
 private:
 	GameManager* _gameManager;
@@ -35,6 +40,10 @@ private:
 
 	/*A little ball icon that goes next to our lives text*/
 	sf::CircleShape _livesIcon;
+
+	/*Text that informs you on the gambling outcomes*/
+	sf::Text _gamblingText;
+
 
 	static constexpr float LIFE_RADIUS = 15.0f;
 	static constexpr float LIFE_PADDING = 20.0f;

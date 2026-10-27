@@ -22,6 +22,10 @@ public:
     void levelComplete();
     void powerupEffect(POWERUPS pu, float t);
 
+    /*(safer) update of the UI object with the gambling systems outcome text*/
+    void updateGamblingUI(std::string str);
+
+
     Paddle* getPaddle() const;
     BrickManager* getBrickManager() const;
     PowerupManager* getPowerupManager() const;
@@ -52,4 +56,12 @@ private:
 
     static constexpr float PAUSE_TIME_BUFFER = 0.5f;
     static constexpr float POWERUP_FREQUENCY = 7.5f;    // time between minimum powerup spawn
+
+
+public:
+
+
+    /*GETTERS AND SETTERS*/
+
+    inline int getLives() { return _lives; }
 };

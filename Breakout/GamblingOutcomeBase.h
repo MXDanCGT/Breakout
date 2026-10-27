@@ -11,9 +11,13 @@ They will be passed in the game manager to allow them to acccess functionality t
 class GamblingOutcomeBase
 {
 public:
+	GamblingOutcomeBase();
+
 
 	GamblingOutcomeBase(int Weight, GamblingSystem* gamblingSystem);
-	~GamblingOutcomeBase();
+
+	/*Virtual function for activating the outcome - the base one does nothing*/
+	virtual std::string activateOutcome();
 
 protected:
 
@@ -24,9 +28,6 @@ protected:
 
 	//Value dictating the likelihood that this outcome  occours
 	int _weight;
-
-	/*Virtual function for activating the outcome - the base one does nothing*/
-	virtual void activateOutcome();
 
 public:
 

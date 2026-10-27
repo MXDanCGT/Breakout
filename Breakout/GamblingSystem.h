@@ -14,50 +14,56 @@ public:
 
 	GamblingSystem(sf::RenderWindow* window, class Paddle* paddle, class Ball* ball, GameManager* gameManager);
 	/*Initialisation function, seed the random number generator*/
-	void Initialise(); 
+	void initialise(); 
 
 	/*Roll the dice, see what outcome you get! TODO MAKE JUCIER*/
-	void RollGamblingOutcome();
+	void rollGamblingOutcome();
 
+	/*Update, tick down our timers for the system*/
+	void update(float dt);
 
+	/*Is the gambling system currently active ?*/
+	bool _bActive;
+
+	/*Cooldown timer to gamble again ? includes the animation*/
+	float _gamblingCooldown;
 
 private:
 
-	//NONE OWNING Ptr to the game window, allowing us to display things
+	/*NONE OWNING Ptr to the game window, allowing us to display things*/
 	sf::RenderWindow* _window;
 
-	//NONE OWNING Ptr to the paddle, allowing us to do effects that alter the paddle
+	/*NONE OWNING Ptr to the paddle, allowing us to do effects that alter the paddle*/
 	class Paddle* _paddle;
 
-	//NONE OWNING Ptr to the ball, allowing us to do effects that alter the ball
+	/*NONE OWNING Ptr to the ball, allowing us to do effects that alter the ball*/
 	class Ball* _ball;
 
 
-	//NONE OWNING Ptr to the game manager
+	/*NONE OWNING Ptr to the game manager*/
 	GameManager* _gameManager;
 
-	//Maximum number our random generator can reach - i.e.: the sum of all the weights of all the outcomes
+	/*Maximum number our random generator can reach - i.e.: the sum of all the weights of all the outcomes*/
 	int _randMax;
 
-	//Minimum number our random generator can reach - i.e.: 0
+	/*Minimum number our random generator can reach - i.e.: 0*/
 	int _randMin;
 
-	//Random number generator
+	/*Random number generator*/
 	std::mt19937 _randomGenerator;
 
-	//Random device for rng
+	/*Random device for rng*/
 	std::random_device _rd;
 
-	//uniform int distribution for rng
+	/*uniform int distribution for rng*/
 	std::uniform_int_distribution<> _distribution;
 
 	/*vector of all our outcomes*/
 	std::vector<std::unique_ptr<class GamblingOutcomeBase>> _gamblingOutcomes;
 
-
 public:
 
 	/*GETTERS AND SETTERS*/
 
-	inline const GameManager* GetGameManager() { return _gameManager; }
+	inline GameManager* GetGameManager() { return _gameManager; }
 };

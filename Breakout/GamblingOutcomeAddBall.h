@@ -7,7 +7,9 @@ class  GamblingOutcomeAddBall : public GamblingOutcomeBase
 
 public:
 
+	GamblingOutcomeAddBall();
+
 	GamblingOutcomeAddBall(int Weight, GamblingSystem* gamblingSystem);
 
-	virtual void activateOutcome() override;
+	virtual std::string activateOutcome() override;
 };
