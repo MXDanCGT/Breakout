@@ -90,6 +90,24 @@
     <ClCompile Include="EffectableSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EffectBallSlowBall.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectPaddleBigPaddle.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="PowerupFastBall.cpp">
+      <Filter>Powerups</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectPaddleSmallPaddle.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="EffectBallFireBall.cpp">
+      <Filter>Effects</Filter>
+    </ClCompile>
+    <ClCompile Include="GamblingOutcomeEffect.cpp">
+      <Filter>GamblingOutcomes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h">
@@ -157,6 +175,24 @@
     </ClInclude>
     <ClInclude Include="EffectBallFastBall.h">
       <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectBallSlowBall.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectPaddleBigPaddle.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerupFastBall.h">
+      <Filter>Powerups</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectPaddleSmallPaddle.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="EffectBallFireBall.h">
+      <Filter>Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="GamblingOutcomeEffect.h">
+      <Filter>GamblingOutcomes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

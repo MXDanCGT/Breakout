@@ -11,12 +11,11 @@ class EffectPaddle : public EffectBase
 public:
 
 	EffectPaddle();
-	EffectPaddle(Paddle* givenPaddle);
+	EffectPaddle(float givenMaxDuration, std::vector<std::string> givenMutexEffects, Paddle* givenPaddle);
 
 protected:
 
 	Paddle* _paddle;
-
 
 };
 

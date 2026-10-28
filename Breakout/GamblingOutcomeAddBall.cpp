@@ -1,20 +1,19 @@
 #include "GamblingOutcomeAddBall.h"
 #include "GamblingSystem.h"
 
-GamblingOutcomeAddBall::GamblingOutcomeAddBall()
-{}
+GamblingOutcomeAddBall::GamblingOutcomeAddBall(){}
 
 
-GamblingOutcomeAddBall::GamblingOutcomeAddBall(int Weight, GamblingSystem* gamblingSystem) : GamblingOutcomeBase(Weight, gamblingSystem)
+GamblingOutcomeAddBall::GamblingOutcomeAddBall(int Weight, GamblingSystem* gamblingSystem, int balls) : GamblingOutcomeBase(Weight, gamblingSystem), _balls(balls)
 {
-	_outcomeString = "You got another ball. Yipee.";
+	_outcomeString = "You got some balls";
 }
 
 std::string GamblingOutcomeAddBall::activateOutcome()
 {
 	if (_gamblingSystem)
 	{
-		_gamblingSystem->GetGameManager()->addLives(1);
+		_gamblingSystem->GetGameManager()->addLives(_balls);
 	}
 
 	return GamblingOutcomeBase::activateOutcome();

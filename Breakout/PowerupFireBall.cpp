@@ -1,8 +1,8 @@
 #include "PowerupFireBall.h"
 
 
-PowerupFireBall::PowerupFireBall(sf::RenderWindow* window, Paddle* paddle, Ball* ball, float x_pos)
-    : PowerupBase(window, paddle, x_pos)
+PowerupFireBall::PowerupFireBall(sf::RenderWindow* window, Paddle* paddle, Ball* ball, float x_pos, std::string powerupEffect, EffectableSystem* effectableSystem)
+    : PowerupBase(window, paddle, x_pos, powerupEffect, effectableSystem)
 {
     _sprite.setFillColor(ballEffectsColour);
 }

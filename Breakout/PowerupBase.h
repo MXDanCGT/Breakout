@@ -8,14 +8,13 @@
 #include "EffectableSystem.h"
 #include <vector>
 
-
 /*
 * The other half of the powerups - now this is just the ball that is in the world - when collided, it will add a string to the effect queue...
 */
 class PowerupBase
 {
 public:
-    PowerupBase(sf::RenderWindow* window, Paddle* paddle, float spawnX);
+    PowerupBase(sf::RenderWindow* window, Paddle* paddle, float spawnX, std::string powerupEffect, EffectableSystem* effectableSystem);
     virtual ~PowerupBase();
 
     void update(float dt);

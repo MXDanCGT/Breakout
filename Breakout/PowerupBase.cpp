@@ -2,8 +2,8 @@
 #include <cmath>
 #include <iostream>
 
-PowerupBase::PowerupBase(sf::RenderWindow* window, Paddle* paddle, float spawnX)
-    : _time(0.0f), _paddle(paddle) // Initialize the time variable
+PowerupBase::PowerupBase(sf::RenderWindow* window, Paddle* paddle, float spawnX, std::string powerupEffect, EffectableSystem* effectableSystem)
+    : _time(0.0f), _paddle(paddle), _powerupEffect(powerupEffect), _effectableSystem(effectableSystem) // Initialize the time variable
 {
     _window = window;
     _sprite.setRadius(RADIUS);
@@ -63,6 +63,7 @@ bool PowerupBase::checkCollisionWithPaddle()
     if (_sprite.getGlobalBounds().intersects(_paddle->getBounds()))
     {
         _isAlive = false;
+        applyEffect();
         return true;
     }
     return false;

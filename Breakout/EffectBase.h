@@ -15,6 +15,8 @@ public:
 	/*Apply the effect!*/
 	virtual void applyEffect();
 
+	/*Stop the effect early...*/
+	virtual void stopEffect();
 
 protected:
 
@@ -24,7 +26,6 @@ protected:
 	std::vector<std::string> _mutexEffects;
 
 public:
-
 
 	inline float getMaxDuration() const { return _maxDuration; }
 

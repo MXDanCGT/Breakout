@@ -9,7 +9,11 @@ public:
 
 	GamblingOutcomeAddBall();
 
-	GamblingOutcomeAddBall(int Weight, GamblingSystem* gamblingSystem);
+	GamblingOutcomeAddBall(int Weight, GamblingSystem* gamblingSystem, int balls);
 
 	virtual std::string activateOutcome() override;
+
+private:
+
+	int _balls;
 };

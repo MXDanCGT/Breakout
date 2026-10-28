@@ -5,6 +5,7 @@
 #include "GamblingOutcomeAddBall.h"
 #include "Paddle.h"
 #include "Ball.h"
+#include "GamblingOutcomeEffect.h"
 
 //It is worth noting: SFML (according to its  documentation) handles seeding random at start up, so its not something we need to worry about
 GamblingSystem::GamblingSystem(sf::RenderWindow* window, Paddle* paddle, Ball* ball, GameManager* gameManager) : 
@@ -13,11 +14,23 @@ GamblingSystem::GamblingSystem(sf::RenderWindow* window, Paddle* paddle, Ball* b
 	//FOR NOW this is where we will fill our gambling outcomes
 
 	_gamblingOutcomes.push_back(
-	std::make_unique<GamblingOutcomeBase>(3, this)
+	std::make_unique<GamblingOutcomeBase>(20, this)
 	);
 
 	_gamblingOutcomes.push_back(
-		std::make_unique<GamblingOutcomeAddBall>(1, this)
+		std::make_unique<GamblingOutcomeAddBall>(10, this, 3)
+	);
+
+	_gamblingOutcomes.push_back(
+		std::make_unique<GamblingOutcomeEffect>(10, this, "FAST_BALL")
+	);
+
+	_gamblingOutcomes.push_back(
+		std::make_unique<GamblingOutcomeEffect>(10, this, "BIG_PADDLE")
+	);
+
+	_gamblingOutcomes.push_back(
+		std::make_unique<GamblingOutcomeAddBall>(1, this, 99)
 	);
 
 	_bActive = false;

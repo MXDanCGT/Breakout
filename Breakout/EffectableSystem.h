@@ -4,7 +4,7 @@
 #include <vector>
 #include <unordered_map>
 #include <memory>
-
+#include <SFML/Graphics.hpp>
 #include <queue>
 #include "EffectBase.h"
 
@@ -62,12 +62,13 @@ protected:
 	std::queue<std::string> _effectQueue;
 
 	/*List of our active effects - used for checking mut-ex of the effects*/
-	std::vector<std::string> _activeEffects;
-
+	std::unordered_map<std::string, float> _effectActiveMap;
 
 public:
 
 	/*Allows powerups or the gambling system to push effects this way*/
 	inline void addEffectToQueue(std::string givenEffect)  { _effectQueue.push(givenEffect); }
 
+
+	std::string getEffectText();
 };

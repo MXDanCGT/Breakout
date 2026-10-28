@@ -11,5 +11,5 @@ public:
 
 
 	virtual void applyEffect() override;
-
+	virtual void stopEffect() override;
 };

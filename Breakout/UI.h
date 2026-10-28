@@ -13,7 +13,7 @@ public:
 	UI(sf::RenderWindow* window, int lives, GameManager* gameManager);
 	~UI();
 
-	void updatePowerupText(std::pair<POWERUPS, float>);
+	void updatePowerupText(std::string EffectText);
 
 	/*Function for updating the lives text, on life lost or gained...*/
 	void updateLivesText(int lives);

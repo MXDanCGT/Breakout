@@ -6,5 +6,12 @@ EffectBallFastBall::EffectBallFastBall(float givenMaxDuration, std::vector<std::
 
 void EffectBallFastBall::applyEffect()
 {
-	_ball->setVelocity(2.f, 5.0f); //Worth noting there is a duration tied into the effect on the balls end? 
+	if(_ball)
+		_ball->setVelocity(2.f, _maxDuration); //Worth noting there is a duration tied into the effect on the balls end? 
+}
+
+void EffectBallFastBall::stopEffect()
+{
+	if(_ball)
+		_ball->resetSpeed();
 }

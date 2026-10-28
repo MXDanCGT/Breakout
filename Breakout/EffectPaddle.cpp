@@ -3,4 +3,4 @@
 
 
 EffectPaddle::EffectPaddle() : _paddle(nullptr) {}
-EffectPaddle::EffectPaddle(Paddle* givenPaddle) : _paddle(givenPaddle) {}
+EffectPaddle::EffectPaddle(float givenMaxDuration, std::vector<std::string> givenMutexEffects, Paddle* givenPaddle) : EffectBase::EffectBase(givenMaxDuration, givenMutexEffects), _paddle(givenPaddle) {}

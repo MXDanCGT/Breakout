@@ -29,7 +29,7 @@ public:
 
     Paddle* getPaddle() const;
     BrickManager* getBrickManager() const;
-    EffectableSystem* getEffectableSystem() const;
+    inline EffectableSystem* getEffectableSystem() const { return _effectableSystem; };
     sf::RenderWindow* getWindow() const;
     UI* getUI() const;
 
@@ -49,7 +49,11 @@ private:
     Paddle* _paddle;
     Ball* _ball;
     BrickManager* _brickManager;
+    /*Handles the game's effect side of the powerups*/
     EffectableSystem* _effectableSystem;
+    /*Handles the physical powerup objects in the game world*/
+    PowerupManager* _powerupManager;
+
     MessagingSystem* _messagingSystem;
     GamblingSystem* _gamblingSystem;
     UI* _ui;
